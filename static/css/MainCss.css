@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Secular+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(203, 180, 224);
+    color: white;
+    font-family: 'Secular One', sans-serif;
+
+}
+
+
+.headers {
+    height: 200px;
+    background-color: rgb(203, 172, 209);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+    margin: 20px 10px;
+
+
+}
+
+
+
+.link a:hover {
+    background-color: rgb(221, 221, 150);
+}
+
+.link {
+    display: flex;
+    margin: auto 80px;
+}
+
+.link a {
+    text-decoration: none;
+    background-color: #bdafae;
+    color: rgb(8, 8, 8);
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+.pic {
+    /* height: x;
+    width:600px; */
+    width: 98vw;
+    height: 800px;
+    background-color: rgb(203, 172, 209);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    margin: 20px 10px;
+
+    background-image: url("/static/product/new01.jpg" );
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+
+}
+
+
+
+.divdiv {
+    height: 200px;
+    width: 750px;
+    background-color: rgb(238, 234, 238);
+    color: black;
+    padding: 16px;
+    margin-left: 600px;
+    
+    box-shadow: 20px 20px 30px rgb(86, 85, 85);
+    animation: rainbow 4s ease-in-out 0.5s 5;
+
+}
+
+
+@keyframes rainbow {
+    0% {background-color:  rgb(203, 180, 224);}
+    16% {background-color: rgb(129, 122, 111);}
+    33% {background-color:rgb(153, 226, 124);}
+
+    
+}
+
+
+.continer {
+
+    width: 100vw;
+    height: 100vh;
+    font-size: 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 250px 250px 1fr;
+    grid-template-rows: 1fr 250px 250px 1fr;
+
+    gap: 5px;
+
+    padding: 10px;
+}
+
+
+.box {
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 10px;
+
+}
+
+
+.box>div {
+
+    border: 1px solid black;
+    background-image: url("/static/product/play-stone-1743645_1920.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.box>div:hover {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+
+.box>div {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+*/ .left {
+    width: 400px;
+
+    padding: 15px 5px;
+    font-family: 'Secular One', sans-serif;
+    text-align: right;
+}
+
+.left h1{
+    font-size: 50px;
+    margin-bottom:1px;
+
+}
+
+.left p{
+margin-top:1px;
+
+}
+
+footer{
+    height: 400px;
+    width: 98vw;
+    background-color: rgb(40, 37, 41);
+    text-align: center;
+    padding: 200px auto;
+
+}
+
+footer p{
+    padding: 50px 54px;
+}
+
+.email{
+    margin: 50px auto;
+    width: 250px;
+}
+
+input[type=text], select {
+    width: 100%; 
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+
+
+  /* ---------------- */
+
+
+  
+.contact-container{
+    margin: 0;
+    grid-template-columns: 100%; 
+    grid-template-rows: 10% 80% 10%;
+    display: grid;
+    grid-template-areas: 
+    "headers"
+    "form"
+    "footer";
+}
+
+
+.formm {
+    width: 100vw;
+    height: 80vh;
+    font-size: 20px;
+
+    display: grid;
+
+
+    grid-template-columns: 1fr 250px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    gap: 5px;
+
+    padding: 50px;
+    align-items: center;
+
+
+}
+
+.forr {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.forrr{
+margin-top: 100px auto;
+margin-top: 70px;
+
+}
+
+.link .active {
+    background-color: #a9b094df;
+  }
+
+  
+
+  .navi {
+
+    display: none;
+}
+
+
+
+
+/* =============== Abuot ======================= */
+.aboutext{
+text-align: center;
+margin: 50px 30px;
+
+background-color: #4CAF50;
+border-radius: 20px;
+padding: 50px 50px;
+
+}
+
+
+.aboutext li{
+list-style-type: none;
+/* text-decoration: none; */
+} 
+
+
+
+
+/* =============== madia ======================= */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightskyblue;
+    }
+
+    .link {
+        display: none;
+    }
+
+
+    .navi {
+
+        display: block;
+
+        position: sticky;
+        top: 0;
+        width: 100px;
+        height: 100px;
+       
+    }
+
+    .navi  img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+
+    .lin{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px 50px;
+        text-align: center;
+        }
+
+  
+     .pic{
+        display: none;
+
+
+     }
+
+
+
+
+
+    }
+
+    /***** "עיצוב עמוד "האזור האישי *****/
+
+.login, .signUp {
+	margin:0 auto;
+	max-width:500px;
+  }
+  .login-header, .signUp-header {
+	color:black;
+	text-align:center;
+	font-size:200%;
+  }
+
+  .login-form, .signUp-form {
+	border:.5px solid #fff;
+	background-color: 	rgb(144,238,144);
+	border-radius:10px;
+	box-shadow:0px 0px 10px #000;
+	color: black;
+    box-sizing:border-box;
+	padding-top:15px;
+	padding-bottom:10%;
+	margin:5% auto;
+	text-align:center;
+
+  }
+  .login-form h3, .signUp-form h3 {
+	text-align:center;
+	color:#fff;
+  }
+ 
+  .login input[type="email"],
+  .login input[type="password"],
+  .signUp input[type="fullName"],
+  .signUp input[type="password"],
+  .signUp input[type="email"] {
+	max-width:400px;
+	width: 80%;
+	line-height:3em;
+	font-family: 'Secular One', sans-serif;
+	margin:1em 2em;
+	border-radius:5px;
+	border:2px solid #f2f2f2;
+	outline:none;
+	padding-left:10px;
+	direction: ltr;
+  }
+
+  .login-form input[type="submit"],
+  .signUp-form input[type="submit"]{
+	height:50px;
+	width:200px;
+	background:#fff;
+	border:1px solid #f2f2f2;
+	border-radius:20px;
+	color: black;
+	text-transform:uppercase;
+	font-family: 'Secular One', sans-serif;
+	cursor:pointer;
+
+  }
+  
+  .signUp_Button {
+	color:#0f0e0e;
+	margin:20px 0px 5px 50%;
+    text-align: right;
+	text-decoration:underline;
+	cursor:pointer;
+  }
+
+  .no-access {
+	color:#0f0e0e;
+	margin:5px 0px 5px 55%;
+	text-decoration:underline;
+	cursor:pointer;
+  }
+
+    

@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Secular+One&display=swap');
+
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 700,
+        'GRAD' 200,
+        'opsz' 48
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(203, 180, 224);
+    color: white;
+    font-family: 'Secular One', sans-serif;
+
+}
+
+
+.headers {
+    height: 200px;
+    background-color: rgb(203, 172, 209);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+    margin: 20px 10px;
+
+}
+
+
+
+.link a:hover {
+    background-color: rgb(221, 221, 150);
+}
+
+
+.link {
+    display: flex;
+    margin: auto 80px;
+}
+
+.link a {
+    text-decoration: none;
+    background-color: #bdafae;
+    color: rgb(8, 8, 8);
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+}
+
+*/ .left {
+    width: 400px;
+
+    padding: 15px 5px;
+    font-family: 'Secular One', sans-serif;
+    text-align: right;
+}
+
+.left h1 {
+    font-size: 50px;
+    margin-bottom: 1px;
+
+}
+
+.left p {
+    margin-top: 1px;
+
+}
+
+footer {
+    height: 400px;
+    width: 98vw;
+    background-color: rgb(40, 37, 41);
+    text-align: center;
+    padding: 200px auto;
+
+
+}
+
+
+footer p {
+    padding: 50px 54px;
+}
+
+.email {
+    margin: 50px auto;
+    width: 250px;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* ================================ */
+
+
+.pading {
+    padding: 15px 0;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+}
+
+.product .pro {
+    width: 23%;
+    min-width: 250;
+    padding: 10px 12px;
+    border: 1px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgb(221, 214, 214);
+    margin: 15px 0;
+    transform: 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.product .pro:hover {
+    box-shadow: 20px 20px 30px rgb(95, 92, 92);
+}
+
+
+.product .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+ button{
+    text-decoration: none;
+    background-color: #bdafae;
+    color: rgb(8, 8, 8);
+
+    text-align: center;
+    display: inline-block;
+
+ }
+
+.product .pro span {
+    text-align: start;
+    padding: 10px 0;
+    color: rgb(88, 84, 86);
+    font-size: 20px;
+
+}
+
+
+.product .pro h5 {
+    text-align: start;
+    padding: 0 7px;
+    padding: 10px 0;
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+
+}
+
+
+
+#HR .pro .des {
+
+    position: relative;
+}
+
+
+#HR .pro .des .cart {
+    /* width: 40px;
+height:  40px;  */
+    line-height: 20px;
+    border-radius: 500px;
+    background-color: rgb(92, 97, 138);
+    font-weight: 500;
+    color: #c7c5d1;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 15px;
+    position: absolute;
+
+}
+
+
+.navis {
+    width: 100%;
+    height: 40px;
+    background-color: #c7c5d1;
+
+}
+
+
+.link1 {
+    padding: 10px 20px;
+
+}
+
+
+
+/* activ */
+
+
+
+
+.link .active {
+    background-color: #a9b094df;
+
+}
+
+
+.navi {
+
+    display: none;
+}
+
+/* =============== madia ======================= */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightskyblue;
+    }
+
+    .link {
+        display: none;
+    }
+
+    .product {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    .product .pro {
+        width: 100%;
+        min-width: 200;
+        padding: 10px 12px;
+        border: 1px solid white;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 20px 20px 30px rgb(221, 214, 214);
+        margin: 20px 5px;
+        transform: 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+
+    .navi {
+
+        display: block;
+
+        position: sticky;
+        top: 0;
+        width: 100px;
+        height: 100px;
+       
+    }
+
+    .navi  img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+
+    .lin{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px 50px;
+        text-align: center;
+        }
+
+  
+
+/* --- nav page---- */
+
+    }

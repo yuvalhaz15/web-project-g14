@@ -1,0 +1,179 @@
+body {
+  background-color: rgb(203, 180, 224);
+  margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  background-size: 100% 110%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+.headers {
+  height: 200px;
+  background-color: rgb(203, 172, 209);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+  margin: 20px 10px;
+}
+
+
+
+.link a:hover {
+  background-color: rgb(221, 221, 150);
+}
+
+
+
+
+
+.link {
+  display: flex;
+  margin: auto 80px;
+}
+
+.link a {
+  text-decoration: none;
+  background-color: #bdafae;
+  color: rgb(8, 8, 8);
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+}
+
+.login {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.login-header {
+  color: #fff;
+  text-align: center;
+  font-size: 200%;
+}
+
+/* .login-header h1 {
+	 text-shadow: 0px 5px 15px #000; */
+
+.login-form {
+  border: .5px solid #fff;
+  background-color: rgb(144, 238, 144);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+}
+
+.login-form h3 {
+  text-align: center;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.login-form {
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  max-width: 400px;
+  width: 80%;
+  line-height: 3em;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 1em 2em;
+  border-radius: 5px;
+  border: 2px solid #f2f2f2;
+  outline: none;
+  padding-left: 10px;
+}
+
+.login-form input[type="button"] {
+  height: 30px;
+  width: 100px;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 20px;
+  color: slategrey;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+}
+
+.sign-up {
+  color: #0f0e0e;
+  margin-left: 70%;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.no-access {
+  color: #0f0e0e;
+  margin: 20px 0px 20px 63%;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+.try-again {
+  color: #f2f2f2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*Media Querie*/
+
+
+.navi {
+
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightskyblue;
+  }
+
+
+  .link {
+    display: none;
+  }
+
+  .navi {
+
+    display: block;
+
+    position: sticky;
+    top: 0;
+    width: 100px;
+    height: 100px;
+
+  }
+  
+  .navi img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+
+  .lin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 50px;
+    text-align: center;
+  }
+
+
+}
