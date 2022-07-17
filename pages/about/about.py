@@ -13,5 +13,8 @@ from dotenv import load_dotenv
 
 about = Blueprint('about', __name__,
                          static_folder='static',
-                         static_url_path='/pages/about',
                          template_folder='templates')
+
+@about.route('/about')
+def load_about_page():
+    return render_template('about.html')

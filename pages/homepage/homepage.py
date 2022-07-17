@@ -11,7 +11,14 @@ from dotenv import load_dotenv
 
 
 
-homePage = Blueprint('homePage', __name__,
+homepage = Blueprint('homepage', __name__,
                          static_folder='static',
-                         static_url_path='/pages/homePage',
                          template_folder='templates')
+
+@homepage.route('/')
+def index():
+  return redirect(url_for('homepage.load_home_page'))
+
+@homepage.route('/homepage')
+def load_home_page():
+    return render_template('homepage.html')

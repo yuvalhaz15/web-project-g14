@@ -13,5 +13,9 @@ from dotenv import load_dotenv
 
 products = Blueprint('products', __name__,
                          static_folder='static',
-                         static_url_path='/pages/products',
                          template_folder='templates')
+
+
+@products.route('/products')
+def load_products_page():
+    return render_template('products.html')

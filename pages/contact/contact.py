@@ -13,5 +13,8 @@ from dotenv import load_dotenv
 
 contact = Blueprint('contact', __name__,
                          static_folder='static',
-                         static_url_path='/pages/contact',
                          template_folder='templates')
+
+@contact.route('/contact')
+def load_contact_page():
+    return render_template('contact.html')
