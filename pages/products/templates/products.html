@@ -1,3 +1,4 @@
+
   {% extends 'base.html' %}
 
 
@@ -11,12 +12,16 @@
             <div class="link1">
 
              
-                <button onclick="newToy3()"> כל הקטגוריות </button>
+                <button onclick="window.location.href='/products_all_categories';"> כל הקטגוריות </button>
                 <button onclick="newToy()"> גילאי -+4 </button>
                 <button onclick="newToy1()"> גילאי -+8 </button>
                 <button onclick="newToy2()"> גילאי -+9 </button>
         
-
+              {% if products %}
+                {% for product in products %}
+                  <h1 class="product_list">Name:&nbsp {{ product.toy_name }} &nbsp Category:&nbsp {{ product.toy_category }} &nbsp Condition:&nbsp {{ product.toy_condition }}</h1>
+                 {% endfor %}
+                {% endif %}
             </div>
  
         </div>
