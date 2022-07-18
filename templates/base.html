@@ -5,22 +5,30 @@
     {% block title %}<title>page title</title>{% endblock %}
     {% include('nav_bar.html') %}
 
-        {# CSS #}
-        {% include('style.html') %}
-        {% block page_head_css %}{% endblock %}
+    {# CSS #}
+
+     {% block page_head_css %}
+     {% include('style.html') %}
+     {% endblock %}
 
 
-         {# JS #}
-        {% include('functional.html') %}
-        {% block page_body_js %}{% endblock %}
+    {# JS #}
+
+    {% block page_body_js %}
+    {% include('functional.html') %}
+    {% endblock %}
 </head>
 <body>
 
 {% block tohen %}
-    <h1>Message from BASE Page!</h1>
+
 {% endblock %}
 
-
+{% block page_body_footer %}
+   <footer>
+    {% include('footer.html') %}
+   </footer>
+{% endblock %}
 </body>
-{% include('footer.html') %}
+
 </html>

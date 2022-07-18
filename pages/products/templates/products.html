@@ -1,41 +1,40 @@
+{% extends 'base.html' %}
 
-  {% extends 'base.html' %}
-
-
+{% block page_head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/product.css')}}">
+{% endblock %}
 {% block tohen %}
+<div class="navis">
+
+    <div class="link1">
 
 
-
-
-        <div class="navis">
-
-            <div class="link1">
-
-             
-                <button onclick="window.location.href='/products_all_categories';"> כל הקטגוריות </button>
-                <button onclick="newToy()"> גילאי -+4 </button>
-                <button onclick="newToy1()"> גילאי -+8 </button>
-                <button onclick="newToy2()"> גילאי -+9 </button>
-        
-              {% if products %}
-                {% for product in products %}
-                  <h1 class="product_list">Name:&nbsp {{ product.toy_name }} &nbsp Category:&nbsp {{ product.toy_category }} &nbsp Condition:&nbsp {{ product.toy_condition }}</h1>
-                 {% endfor %}
-                {% endif %}
-            </div>
- 
-        </div>
-
+        <button onclick="window.location.href='/products_all_categories';"> כל הקטגוריות</button>
+        <button onclick="newToy()"> גילאי -+4</button>
+        <button onclick="newToy1()"> גילאי -+8</button>
+        <button onclick="newToy2()"> גילאי -+9</button>
     </div>
+</div>
+<section>
+    <div id="HR" class="product" class="pading">
 
+        {% if products %}
 
-    <section>
-        <div id="HR" class="product" class="pading">
+        {% for product in products %}
 
-
-
+        <div class="pro"><img src="/static/product/product4.jpg">
+            <div class="des"><span>{{ product.toy_name }}</span>
+                <h5> blabla</h5><a href="#">
+                    <span class="material-symbols-outlined cart">add_box</span></a></div>
         </div>
-    </section>
+
+
+        {% endfor %}
+
+        {% endif %}
+    </div>
+</section>
 
 
 {% endblock %}

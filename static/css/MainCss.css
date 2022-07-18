@@ -174,19 +174,6 @@ margin-top:1px;
 
 }
 
-footer{
-    height: 400px;
-    width: 98vw;
-    background-color: rgb(40, 37, 41);
-    text-align: center;
-    padding: 200px auto;
-
-}
-
-footer p{
-    padding: 50px 54px;
-}
-
 .email{
     margin: 50px auto;
     width: 250px;
