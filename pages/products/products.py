@@ -23,3 +23,15 @@ def load_products_page():
 def display_all_categories():
     products_to_display=productsDbManager.get_all_products()
     return render_template('products.html',products=products_to_display)
+
+@products.route('/products_by_category/<string:category>')
+def display_spesific_categories(category):
+    products_to_display=productsDbManager.get_category_products(category)
+    return render_template('products.html',products=products_to_display)
+
+
+@products.route('/user_products')
+def display_user_products():
+    products_to_display = productsDbManager.get_products_by_user_id(session['user_id'])
+    return render_template('my_products.html', products=products_to_display)
+

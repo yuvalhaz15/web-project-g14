@@ -14,6 +14,8 @@ from pages.about.about import about
 from pages.homepage.homepage import homepage
 from pages.contact.contact import contact
 from pages.products.products import products
+from pages.userPage.userPage import userPage
+from pages.signUp.signUp import signUp
 
 app = Flask(__name__)
 app.config['SESSION_PERMANENT'] = True
@@ -38,10 +40,10 @@ app.register_blueprint(contact)
 
 app.register_blueprint(products)
 
-# ## signUp
-# from pages.signUp.signUp import signUp
-# app.register_blueprint(signUp)
-#
-# ## signUp
-# from pages.userPage.userPage import userPage
-# app.register_blueprint(userPage)
+## signUp
+
+app.register_blueprint(signUp)
+
+# sign_in/Up
+
+app.register_blueprint(userPage)

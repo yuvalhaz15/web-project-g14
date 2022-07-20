@@ -6,6 +6,7 @@
         </div>
 
         <div>
+
             <div class="link">
 
                 <div class="link">
@@ -14,9 +15,11 @@
                     <a href="/homepage">דף הבית</a>
                     <a href="/contact">צור קשר</a>
                     <a href="/products">גלריית מוצרים </a>
-
+                    {% if session['loged_in'] %}
+                    <a href="/user_products">המוצרים שלי </a>
+                    {% endif %}
                 </div>
-                <a class="nav"  href="/templates/UserPage_signup.html" ><span class="material-symbols-outlined">settings_accessibility</span>
+                <a class="nav"  href="/user_login" ><span class="material-symbols-outlined">login</span>
                 </a>
             </div>
 

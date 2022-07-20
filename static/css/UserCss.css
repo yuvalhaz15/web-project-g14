@@ -26,8 +26,36 @@ a {
   padding: 16px;
   margin: 20px 10px;
 }
+.log_out_button{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
+.log_out_button button{
+
+  text-decoration: none;
+  background-color: #bdafae;
+  color: rgb(8, 8, 8);
+  padding: 14px 25px;
+
+
+}
+.hello_message{
+  font-size: 30px;
+    text-align: center;
+   color: black;
+
+}
+.register_message{
+
+    font-size: 30px;
+    text-align: center;
+   color: red;
+
+}
 
 .link a:hover {
   background-color: rgb(221, 221, 150);
