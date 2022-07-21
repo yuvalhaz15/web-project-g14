@@ -10,11 +10,59 @@
     <div class="link1">
 
 
-        <button onclick="window.location.href='/products_add_product';"> הוסף מוצר</button>
-        <button onclick="window.location.href='/products_update_category/4-';"> ערוך מוצר</button>
-        <button onclick="window.location.href='/products_delete_category/8-';"> מחק מוצר</button>
+        <button onclick="window.location.href='/products_add_product/first_display';"> הוסף צעצוע</button>
+        <button onclick="window.location.href='/products_update_product/first_display';"> ערוך צעצוע</button>
+        <button onclick="window.location.href='/products_delete_product/first_display';"> מחק צעצוע</button>
     </div>
 </div>
+
+{% if message %}
+<h1 class="toy_crud_message">{{ message }}</h1>
+{% endif %}
+
+{% if update_product %}
+<div class="crud_form">
+    <form action="/products_update_product/update" method="post" class="signUp-form">
+        <label for="toy_id">מספר הצעצוע</label><br>
+        <select name="toy_id" id="toy_id">
+            {% for toy_id in toys_id %}
+            <option value={{toy_id.id}}>{{toy_id.id}}</option>
+            {% endfor %}
+        </select>
+        <label for="toy_name">שם הצעצוע</label><br>
+        <input id="toy_name" name="toy_name" type="text" maxlength="20" required><br>
+        <label for="toy_category">קטגוריית הצעצוע</label>
+        <select name="toy_category" id="toy_category" required>
+            <option value="4-">4-</option>
+            <option value="8-">8-</option>
+            <option value="9+">9+</option>
+        </select>
+        <label for="toy_condition">מצב הצעצוע</label>
+        <select name="toy_condition" id="toy_condition">
+            <option value="כמו חדש">כמו חדש</option>
+            <option value="ישן">ישן</option>
+            <option value="טוב">טוב</option>
+        </select>
+        <input type="submit" value="ערוך צעצוע"><br><br>
+    </form>
+</div>
+{% endif %}
+
+{% if delete_product %}
+<div class="crud_form">
+    <form action="/products_delete_product/delete" method="get" class="signUp-form">
+        <label for="toy_id">מספר הצעצוע</label><br>
+        <select name="toy_id" id="toy_id_delete">
+            {% for toy_id in toys_id %}
+            <option value={{toy_id.id}}>{{toy_id.id}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="מחק צעצוע"><br><br>
+    </form>
+</div>
+{% endif %}
+
+
 <section>
     <div id="HR" class="product" class="pading">
 

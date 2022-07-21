@@ -9,7 +9,7 @@ import asyncio
 import aiohttp
 from dotenv import load_dotenv
 from utilities.db.products_db import productsDbManager
-
+from utilities.db.products_crud_db import productsCrudDbManager
 products = Blueprint('products', __name__,
                          static_folder='static',
                          template_folder='templates')
@@ -30,8 +30,34 @@ def display_spesific_categories(category):
     return render_template('products.html',products=products_to_display)
 
 
+
 @products.route('/user_products')
 def display_user_products():
     products_to_display = productsDbManager.get_products_by_user_id(session['user_id'])
     return render_template('my_products.html', products=products_to_display)
 
+
+##CRUD PRODUCT (TOY)
+
+@products.route('/products_update_product/<string:page_state>', methods=['GET', 'POST'])
+def update_products(page_state):
+   if page_state == 'first_display':
+     toys_id=productsCrudDbManager.get_products_id_by_user_id(session['user_id'])
+     return render_template('my_products.html', update_product='true',toys_id=toys_id)
+
+   toy_id = request.form['toy_id']
+   toy_name = request.form['toy_name']
+   toy_category = request.form['toy_category']
+   toy_condition = request.form['toy_condition']
+   productsCrudDbManager.update_product( toy_id, toy_name, toy_category, toy_condition)
+   return render_template('my_products.html', message='הצעצוע עודכן בהצלחה')
+
+@products.route('/products_delete_product/<string:page_state>')
+def delete_products(page_state):
+   if page_state == 'first_display':
+     toys_id = productsCrudDbManager.get_products_id_by_user_id(session['user_id'])
+     return render_template('my_products.html', delete_product='true', toys_id=toys_id)
+
+   toy_id=request.args['toy_id']
+   productsCrudDbManager.delete_product(toy_id)
+   return render_template('my_products.html', message='הצעצוע נמחק בהצלחה')

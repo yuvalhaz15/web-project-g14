@@ -18,5 +18,5 @@ class productsDB:
     def get_products_by_user_id(self,user_id):
         query_result = dbManager.fetch("SELECT *  FROM toys join user_toys on toys.id=user_toys.toy_id where user_toys.user_id=%s" % user_id)
         return query_result
-
+    
 productsDbManager = productsDB()

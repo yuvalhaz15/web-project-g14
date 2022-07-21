@@ -87,8 +87,24 @@ footer {
 
 
 }
+.crud_form{
+     grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    margin: 50px auto;
+    width: 250px;
 
+}
+.toy_crud_message{
 
+    font-size: 30px;
+    text-align: center;
+   color: red;
+}
 footer p {
     padding: 50px 54px;
 }
