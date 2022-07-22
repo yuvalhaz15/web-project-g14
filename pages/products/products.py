@@ -61,3 +61,14 @@ def delete_products(page_state):
    toy_id=request.args['toy_id']
    productsCrudDbManager.delete_product(toy_id)
    return render_template('my_products.html', message='הצעצוע נמחק בהצלחה')
+
+@products.route('/products_add_product/<string:page_state>')
+def add_products(page_state):
+   if page_state == 'first_display':
+     return render_template('my_products.html', add_product='true')
+
+   toy_name = request.args['toy_name']
+   toy_category = request.args['toy_category']
+   toy_condition = request.args['toy_condition']
+   productsCrudDbManager.add_product(session['user_id'],toy_name, toy_category, toy_condition)
+   return render_template('my_products.html', message='הצעצוע נוסף בהצלחה')

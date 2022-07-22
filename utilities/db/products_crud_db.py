@@ -1,5 +1,5 @@
 from utilities.db.db_manager import dbManager
-
+from datetime import datetime
 
 class productsCrudDB:
     def __init__(self):
@@ -20,4 +20,14 @@ class productsCrudDB:
         dbManager.commit("DELETE FROM user_toys WHERE toy_id =%s;" % toy_id_to_delete)
         return True
 
+    def add_product(self,user_id,toy_name,toy_category,toy_condition):
+        dbManager.commit("INSERT into toys  (toy_name ,toy_category ,toy_condition,is_taken )VALUES ('%s','%s', '%s','%s')" % (
+            toy_name,toy_category,toy_condition,0))
+        toy_id_result=dbManager.fetch("SELECT id FROM toys   order by 1 desc LIMIT 1     "   )
+        toy_id=toy_id_result[0].id
+        dbManager.commit("INSERT into user_toys  (user_id ,toy_id ,date_added )VALUES ('%s','%s','%s')" % (
+            user_id, toy_id,datetime.today()))
+        return True
+    
+    
 productsCrudDbManager = productsCrudDB()
