@@ -15,6 +15,21 @@ a {
   margin: 0;
   padding: 0;
 }
+.sign_up_warning_message{
+  font-size: 30px;
+    text-align: center;
+   color: red;
+
+
+
+}
+
+.sign_up_finish_message{
+  font-size: 30px;
+    text-align: center;
+   color: black;
+}
+
 
 .headers {
   height: 200px;

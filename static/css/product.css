@@ -87,6 +87,17 @@ footer {
 
 
 }
+.sign_up_finish_message{
+
+     margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    margin: 50px auto;
+    width: 250px;
+display: block;
+    margin-top: 0em;
+
+}
 .crud_form{
      grid-column-start: 2;
     grid-column-end: 3;
@@ -116,7 +127,7 @@ footer p {
 
 input[type=text],
 select {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;

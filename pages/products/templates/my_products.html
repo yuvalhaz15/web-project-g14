@@ -28,7 +28,7 @@
             {% for toy_id in toys_id %}
             <option value={{toy_id.id}}>{{toy_id.id}}</option>
             {% endfor %}
-        </select>
+        </select><br>
         <label for="toy_name">שם הצעצוע</label><br>
         <input id="toy_name" name="toy_name" type="text" maxlength="20" required><br>
         <label for="toy_category">קטגוריית הצעצוע</label>
@@ -36,7 +36,7 @@
             <option value="4-">4-</option>
             <option value="8-">8-</option>
             <option value="9+">9+</option>
-        </select>
+        </select><br>
         <label for="toy_condition">מצב הצעצוע</label>
         <select name="toy_condition" id="toy_condition">
             <option value="כמו חדש">כמו חדש</option>
@@ -73,13 +73,13 @@
             <option value="4-">4-</option>
             <option value="8-">8-</option>
             <option value="9+">9+</option>
-        </select>
+        </select><br>
         <label for="toy_condition">מצב הצעצוע</label>
         <select name="toy_condition" id="toy_condition_add">
             <option value="כמו חדש">כמו חדש</option>
             <option value="ישן">ישן</option>
             <option value="טוב">טוב</option>
-        </select>
+        </select><br>
         <input type="submit" value="הוסף צעצוע"><br><br>
     </form>
 </div>

@@ -15,7 +15,7 @@
     </div>
 
   {% if warning_meassage %}
-  <h1 class="sign_up_message">{{ email_is_exist_meassage }}</h1>
+  <h1 class="sign_up_warning_message">{{ warning_meassage }}</h1>
   {% endif %}
 
   {% if end_of_process_meassage %}
@@ -28,22 +28,22 @@
        <label for="last_name">שם משפחה</label><br>
         <input id="last_name" name="last_name" type="text" maxlength="20" placeholder="שם משפחה" required><br>
         <label for="email">מייל</label><br>
-        <input type="email" id="email" name="אמייל" onblur="checkEmail('email')" placeholder="exm@gmail.com" required><br>
+        <input type="email" id="email" name="email" onblur="checkEmail('email')" placeholder="exm@gmail.com" required><br>
         <label for="password1">סיסמה</label><br>
         <input type="password" maxlength="20"  name="password1" id="password1" placeholder="סיסמא" required><br>
         <label for="password2">הקש את הסיסמה שנית</label><br>
         <input type="password" maxlength="20"  name="password2" id="password2" placeholder="סיסמא" required><br><br>
-        <label  for="phone_number">phoneNumber</label><br>
-        <input type="tel" id="phone_number" name="phone_number" pattern="[0][5][0-9]-[0-9]{7}" >
+        <label  for="phone_number">טלפון נייד</label><br>
+        <input type="tel" id="phone_number" name="phone_number" pattern="[0][5][0-9][0-9]{7}" ><br><br>
         <label for="city">עיר</label><br>
         <select name="city" id="city">
             {% for city in cities_list %}
             <option value={{city.city_name}}>{{city.city_name}}</option>
             {% endfor %}
-        </select>
+        </select><br><br>
          <label for="adress">כתובת מגורים</label><br>
         <input id="adress" name="adress" type="text" maxlength="20" placeholder="כתובת מגורים"><br>
-         <label for="region">עיר</label><br>
+         <label for="region">אזור</label><br>
         <select name="region" id="region">
             <option value="מזרח">מזרח</option>
             <option value="מערב">מערב</option>
