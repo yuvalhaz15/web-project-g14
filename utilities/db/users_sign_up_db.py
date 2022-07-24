@@ -17,14 +17,17 @@ class signUpDB:
 
     def add_user(self, email, password, private_name, last_name, phone_number, adress, city, region):
         dbManager.commit(
-            "INSERT into users  (private_name ,last_name,email,phone_number,password )VALUES ('%s','%s', '%s','%s')" % (
-                private_name, last_name, phone_number, password))
-        user_id_result = dbManager.fetch("SELECT id FROM users   order by 1 desc LIMIT 1     ")
-        user_id = user_id_result[0].id
+            "INSERT into users  (private_name ,last_name,email,phone_number,password )VALUES ('%s','%s', '%s','%s','%s')" % (
+                private_name, last_name, email,phone_number, password))
+        user_id_result = dbManager.fetch("SELECT user_id FROM users   order by 1 desc LIMIT 1 ")
+        user_id = user_id_result[0].user_id
+        print(city)
+
         self.add_user_location_to_location_table(user_id, adress, city, region)
         return True
 
     def add_user_location_to_location_table(self, user_id, adress, city, region):
+        print(city)
         dbManager.commit("INSERT into location  (user_id ,adress ,city,region )VALUES ('%s','%s','%s','%s')" % (
             user_id, adress, city, region))
         return True

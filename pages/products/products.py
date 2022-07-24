@@ -17,7 +17,7 @@ products = Blueprint('products', __name__,
 
 @products.route('/products')
 def load_products_page():
-    return render_template('products.html')
+    return redirect(url_for('products.display_all_categories'))
 
 @products.route('/products_all_categories')
 def display_all_categories():

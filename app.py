@@ -17,6 +17,8 @@ from pages.products.products import products
 from pages.userPage.userPage import userPage
 from pages.signUp.signUp import signUp
 
+
+
 app = Flask(__name__)
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
@@ -47,3 +49,4 @@ app.register_blueprint(signUp)
 # sign_in/Up
 
 app.register_blueprint(userPage)
+

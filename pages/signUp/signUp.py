@@ -29,24 +29,27 @@ def check_details_and_and_respone_respectively():
     if request.method == 'POST':
         cities_list = usersSignUpDbManager.get_cities_list()
         email = request.form['email']
+        password1 = request.form['password1']
+        password2 = request.form['password2']
+        warning_meassage=None
         if usersSignUpDbManager.email_is_exist(email):
-            warning_meassage = 'האמייל שהוזן כבר קיים'
-        else:
-            password1 = request.form['password1']
-            password2 = request.form['password2']
+            warning_meassage = 'המייל שהוזן כבר קיים אנא נסה  אחר'
+
+
             
-        if not is_passwords_are_the_same(password1,password2):
+        elif not is_passwords_are_the_same(password1,password2):
             warning_meassage = 'הסיסמאות אינן תואמות אנא נסה שנית'
             
         if warning_meassage:
             return render_template('SignUpPage.html', display_form=True, warning_meassage=warning_meassage,
                                    cities_list=cities_list)
         
-        private_name = request.form['private_name']
+        private_name = request.form['first_name']
         last_name = request.form['last_name']
         phone_number = request.form['phone_number']
         adress = request.form['adress']
         city = request.form['city']
+        print(city)
         region = request.form['region']
 
         usersSignUpDbManager.add_user(email, password1, private_name, last_name, phone_number, adress, city, region)

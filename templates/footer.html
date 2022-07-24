@@ -1,14 +1,8 @@
 
 
+  {% if  not session['loged_in'] %}
+        <p>צרו משתמש , התחברו לאתר ותוכלו להתחיל לשתף צעצועים</p>
 
-        <p>הזינו מייל והכנסו לרשימת התפוצה שלנו</p>
 
-        <div class="email">
-            <form action="#">
-                <label for="fname">אמייל</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your email..">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-
+{% endif %}
 
