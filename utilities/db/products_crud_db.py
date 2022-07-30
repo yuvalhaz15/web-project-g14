@@ -31,7 +31,7 @@ class productsCrudDB:
 
     def add_toy_and_user_into_user_toys_table(self, user_id, toy_id):
         dbManager.commit("INSERT into user_toys  (user_id ,toy_id ,date_added )VALUES ('%s','%s','%s')" % (
-            user_id, toy_id, datetime.today()))
+            user_id, toy_id, datetime.now()))
         return True
 
 

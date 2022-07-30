@@ -40,7 +40,7 @@ def display_user_products():
 ##CRUD PRODUCT (TOY)
 
 @products.route('/products_update_product/<string:page_state>', methods=['GET', 'POST'])
-def update_products(page_state):
+def update_product(page_state):
    if page_state == 'first_display':
      toys_id=productsCrudDbManager.get_products_id_by_user_id(session['user_id'])
      return render_template('my_products.html', update_product='true',toys_id=toys_id)
@@ -53,7 +53,7 @@ def update_products(page_state):
    return render_template('my_products.html', message='הצעצוע עודכן בהצלחה')
 
 @products.route('/products_delete_product/<string:page_state>')
-def delete_products(page_state):
+def delete_product(page_state):
    if page_state == 'first_display':
      toys_id = productsCrudDbManager.get_products_id_by_user_id(session['user_id'])
      return render_template('my_products.html', delete_product='true', toys_id=toys_id)
@@ -63,7 +63,7 @@ def delete_products(page_state):
    return render_template('my_products.html', message='הצעצוע נמחק בהצלחה')
 
 @products.route('/products_add_product/<string:page_state>')
-def add_products(page_state):
+def add_product(page_state):
    if page_state == 'first_display':
      return render_template('my_products.html', add_product='true')
 

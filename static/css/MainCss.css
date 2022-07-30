@@ -212,6 +212,8 @@ input[type=text], select,input[type=tel] {
   
 .contact-container{
     margin: 0;
+    position: relative;
+    top: -125px;
     grid-template-columns: 100%; 
     grid-template-rows: 10% 80% 10%;
     display: grid;
@@ -239,6 +241,9 @@ input[type=text], select,input[type=tel] {
 
 
 }
+
+
+
 
 .forr {
     grid-column-start: 2;

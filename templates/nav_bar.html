@@ -13,7 +13,12 @@
 
                     <a href="/about">אודות</a>
                     <a href="/homepage">דף הבית</a>
-                    <a href="/contact">צור קשר</a>
+                    {% if not session['loged_in'] %}
+                     <a href="/contact/first_display">צור קשר</a>
+                     {% endif %}
+                    {% if session['loged_in'] %}
+                     <a href="/contact/contact_us">צור קשר</a>
+                     {% endif %}
                     <a href="/products">גלריית צעצועים </a>
                     {% if session['loged_in'] %}
                     <a href="/user_products">הצעצועים שלי </a>

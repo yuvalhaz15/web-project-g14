@@ -3,56 +3,51 @@
 {% block page_head_css %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/MainCss.css')}}">
+<link rel="stylesheet" href="{{ url_for('contact.static',filename='css/contactCss.css')}}">
 {% endblock %}
 
 {% block tohen %}
 
-<body class="contact-container">
-<div class="formm">
+{% if sucsses_message %}
+<h1 class="contact_message">{{ sucsses_message }}</h1>
 
 
-    <div class="forr">
-
-        <div class="h11">
-            <h1 class="hone">צרו קשר</h1>
-        </div>
+{% else %}
+<div class="contact-container">
+    <div class="formm">
 
 
-        <div class="forrr">
+        <div class="forr">
 
-            <form action="URL" method="post">
-                <label for="name">שם מלא</label><br>
-                <input id="name" name="name" onblur="checkName('name')" type="text" maxlength="20" id="full name"
-                       placeholder="full name" name="Full name"><br>
-                <label for="email">email</label><br>
-                <input type="email" id="email" name="email" onblur="checkEmail('email')" placeholder="email"><br>
-                <label for="password">password</label><br>
-                <input type="password" maxlength="20" onblur="checkPassword('password')" name="password" id="password"
-                       placeholder="password"><br><br>
-                <label for="user-text">פרטים נוספים</label><br>
-                <textarea name="user-text" cols="30" rows="6" placeholder="Enter yout text:"></textarea><br>
-                <input type="submit"><br>
+            <div class="h11">
+                <h1 class="hone">צרו קשר</h1>
+            </div>
 
-                <!--<div class="return">
 
-                    <ul>
-                        <a id="back"
-                                href="HomePage.html">חזרה לדף הבית</a>
+            <div class="forrr">
 
-                    </ul>
-                </div>-->
+                <form action="/contact_submit" method="post">
+                    <label for="subject">נושא ההודעה</label><br>
+                    <input id="subject" name="subject" type="text" maxlength="20" placeholder="נושא ההודעה"
+                           name=" subject"><br>
+                    <label for="user_text">פרטים נוספים</label><br>
+                    <textarea id="user_text" name="user_text" cols="30" rows="6" placeholder="הקלד את תוכן ההודעה:"
+                              maxlength="240" required></textarea><br>
+                    <input type="submit" value="שלח">
 
-            </form>
+
+                </form>
+
+            </div>
+
 
         </div>
-
 
     </div>
 
-</div>
-
 
 </div>
 
-</body>
+</div>
+{% endif %}
 {% endblock %}
