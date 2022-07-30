@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block page_head_css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/MainCss.css')}}">
+<link rel="stylesheet" href="{{ url_for('contact.static',filename='css/contactCss.css')}}">
+
+{% endblock %}
+
+{% block tohen %}
+
+
+
+<div class="contact_firt_load">
+
+    <div class="contact_firt_load-header">
+        <h1>התחבר לאתר כדי ליצור עימנו קשר</h1>
+    </div>
+
+<div class="contact_login_button">
+    <button onclick="window.location.href='/user_login';">התחבר</button>
+</div>
+{% block page_body_footer %}
+
+{% endblock %}
+
+
+
+{% endblock %}
+</div>
