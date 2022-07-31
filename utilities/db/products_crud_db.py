@@ -21,10 +21,10 @@ class productsCrudDB:
         dbManager.commit("DELETE FROM toys WHERE id =%s;" % toy_id_to_delete)
         return True
 
-    def add_product(self, user_id, toy_name, toy_category, toy_condition):
+    def add_product(self, user_id, toy_name, toy_category, toy_condition,toy_image_url):
         dbManager.commit(
-            "INSERT into toys  (toy_name ,toy_category ,toy_condition,is_taken )VALUES ('%s','%s', '%s','%s')" % (
-                toy_name, toy_category, toy_condition, 0))
+            "INSERT into toys  (toy_name ,toy_category ,toy_condition,is_taken,toy_image_url )VALUES ('%s','%s', '%s','%s','%s')" % (
+                toy_name, toy_category, toy_condition, 0,toy_image_url))
         toy_id_result = dbManager.fetch("SELECT id FROM toys   order by 1 desc LIMIT 1     ")
         toy_id = toy_id_result[0].id
         self.add_toy_and_user_into_user_toys_table(user_id,toy_id )

@@ -20,8 +20,12 @@ from pages.signUp.signUp import signUp
 
 
 app = Flask(__name__)
+UPLOAD_FOLDER='static/media/product/'
+
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 app.config.from_pyfile('settings.py')
 
 # Homepage

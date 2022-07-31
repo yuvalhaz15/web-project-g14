@@ -63,8 +63,11 @@
 {% endif %}
 
 {% if add_product %}
+{% if not_valid_format_messege %}
+<h1 class="toy_crud_message">{{ not_valid_format_messege }}</h1>
+{% endif %}
 <div class="crud_form">
-    <form action="/products_add_product/add" method="get" class="signUp-form">
+    <form action="/products_add_product/add" method="post"  enctype="multipart/form-data" class="signUp-form">
         </select>
         <label for="toy_name">שם הצעצוע</label><br>
         <input id="toy_name_add" name="toy_name" type="text" maxlength="20" required><br>
@@ -80,6 +83,8 @@
             <option value="ישן">ישן</option>
             <option value="טוב">טוב</option>
         </select><br>
+        <label for="file"> העלה תמונה</label>
+        <input type="file" name="file" id="file">
         <input type="submit" value="הוסף צעצוע"><br><br>
     </form>
 </div>
