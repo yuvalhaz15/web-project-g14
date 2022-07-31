@@ -17,16 +17,25 @@
     </div>
 </div>
 <section>
+
     <div id="HR" class="product" class="pading">
+
 
         {% if products %}
 
         {% for product in products %}
 
-        <div class="pro"><img src="/static/product/product4.jpg">
-            <div class="des"><span>{{ product.id }}    &nbsp: מספר הצעצוע </span>
-                <h5> {{ product.toy_name }}</h5>
-                   </div>
+
+        <div class="pro">
+
+                <div class="des">
+                     {% if product.toy_image_url %}
+                     <a href="{{ url_for('static',filename= 'media/product/'+ product.toy_image_url)}}" target="_blank">
+                     {% endif %}
+                    <span>{{ product.id }}    &nbsp: מספר הצעצוע </span>
+                         <h5> {{ product.toy_name }}</h5> </a>
+                </div>
+
         </div>
 
 
@@ -34,6 +43,7 @@
 
         {% endif %}
     </div>
+
 </section>
 
 

@@ -11,9 +11,17 @@ class productsCrudDB:
             "SELECT toys.id FROM toys join user_toys on toys.id=user_toys.toy_id where user_toys.user_id=%s" % user_id)
         return query_result
 
-    def update_product(self, toy_id, toy_name, toy_category, toy_condition):
-        dbManager.commit("UPDATE toys SET toy_name ='%s',toy_category ='%s',toy_condition='%s'WHERE id=%s ;" % (
-            toy_name, toy_category, toy_condition, toy_id))
+    def get_image_to_delete(self,toy_id):
+        image_to_delete_url_result = dbManager.fetch(
+            "SELECT toy_image_url FROM toys where id=%s" % toy_id)
+
+        image_to_delete_url=image_to_delete_url_result[0].toy_image_url
+        return image_to_delete_url
+    
+
+    def update_product(self, toy_id, toy_name, toy_category, toy_condition,toy_image_url):
+        dbManager.commit("UPDATE toys SET toy_name ='%s',toy_category ='%s',toy_condition='%s',toy_image_url='%s'WHERE id=%s ;" % (
+            toy_name, toy_category, toy_condition,toy_image_url, toy_id))
         return True
 
     def delete_product(self, toy_id_to_delete):

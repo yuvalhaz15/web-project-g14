@@ -80,7 +80,17 @@ function newToy2() {
 
     }
 }
+function display_image(src,width,height,alt){
+    var img=document.createElement("img");
+    img.src=src;
+    img.width=width;
+    img.height=height;
+    img.alt=alt;
 
+    document.appendChild(img);
+
+
+}
 
 function newToy3() {
     CLEAR()

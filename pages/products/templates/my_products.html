@@ -22,7 +22,7 @@
 
 {% if update_product %}
 <div class="crud_form">
-    <form action="/products_update_product/update" method="post" class="signUp-form">
+    <form action="/products_update_product/update" method="post"   enctype="multipart/form-data" class="signUp-form">
         <label for="toy_id">מספר הצעצוע</label><br>
         <select name="toy_id" id="toy_id">
             {% for toy_id in toys_id %}
@@ -43,6 +43,8 @@
             <option value="ישן">ישן</option>
             <option value="טוב">טוב</option>
         </select>
+        <label for="file"> העלה תמונה</label>
+        <input type="file" name="file" id="file_add">
         <input type="submit" value="ערוך צעצוע"><br><br>
     </form>
 </div>
@@ -97,10 +99,16 @@
 
         {% for product in products %}
 
-        <div class="pro"><img src="/static/product/product4.jpg">
-            <div class="des"><span>{{ product.id }}    &nbsp: מספר הצעצוע </span>
-                <h5> {{ product.toy_name }}</h5>
-            </div>
+        <div class="pro">
+
+                <div class="des">
+                     {% if product.toy_image_url %}
+                     <a href="{{ url_for('static',filename= 'media/product/'+ product.toy_image_url)}}" target="_blank">
+                     {% endif %}
+                    <span>{{ product.id }}    &nbsp: מספר הצעצוע </span>
+                         <h5> {{ product.toy_name }}</h5> </a>
+                </div>
+
         </div>
 
 

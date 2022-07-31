@@ -24,8 +24,15 @@
                     <a href="/user_products">הצעצועים שלי </a>
                     {% endif %}
                 </div>
+                 {% if session['loged_in'] %}
+                <a class="nav"  href="/user_login" ><span class="material-symbols-outlined">logout</span>
+                </a>
+                {% else %}
                 <a class="nav"  href="/user_login" ><span class="material-symbols-outlined">login</span>
                 </a>
+
+                {% endif %}
+
             </div>
 
 
