@@ -1,3 +1,4 @@
+
 create table users
 (
     user_id      int auto_increment
@@ -15,24 +16,28 @@ INSERT INTO group14.users (user_id, private_name, last_name, email, phone_number
 INSERT INTO group14.users (user_id, private_name, last_name, email, phone_number, password) VALUES (3, 'פרד', 'פרד', 'Fred@gmail.com', '054-4444446', '12347');
 INSERT INTO group14.users (user_id, private_name, last_name, email, phone_number, password) VALUES (4, 'דויד', 'דה חאה', 'Saver@gmail.com', '054-4444447', '12348');
 INSERT INTO group14.users (user_id, private_name, last_name, email, phone_number, password) VALUES (5, 'אלקס', 'פרגוסון', 'Sir@gmail.com', '054-4444448', '12349');
+INSERT INTO group14.users (user_id, private_name, last_name, email, phone_number, password) VALUES (9, 'ליאור', 'מישוטין', 'mishutin@post.bgu.ac.il', '0544648582', '123456');
 
 create table toys
 (
-    toy_id        int auto_increment
+    id            int auto_increment
         primary key,
     toy_name      varchar(30)                    null,
     toy_category  enum ('4-', '8-', '9+')        null,
     is_taken      tinyint(1)                     not null,
-    toy_image_url varchar(200)                   null,
+    toy_image_url varchar(256)                   null,
     toy_condition enum ('טוב', 'ישן', 'כמו חדש') null
 );
 
 
-INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (1, 'רובוט', '9+', 1, 'https://cdn.azrieli.com/Images/a8b94a2a-d2ff-4ae2-a231-a8408c3e60b7/Normal/fd41b236.jpg', 'כמו חדש');
-INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (2, 'פאזל', '8-', 1, null, 'ישן');
-INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (3, 'דובון', '4-', 0, 'https://i.pinimg.com/474x/15/ae/da/15aedaf16c4f801f05491ed9e7899c28.jpg', 'טוב');
-INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (4, 'מכונית', '9+', 0, null, 'ישן');
-INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (5, 'לגו', '8-', 1, null, 'טוב');
+
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (1, 'רובוט', '4-', 0, 'user4-toy-id-2-robot.jpg', 'כמו חדש');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (2, 'קוביה הונגרית', '9+', 0, 'user3-toy-id2-rubiks_cube.jpg', 'כמו חדש');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (3, 'דובון', '4-', 0, 'user1-toy-id-17-teddy_bear.jpg', 'טוב');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (4, 'מכונית', '8-', 0, 'user2-4-toy_car.jpg', 'ישן');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (5, 'לגו', '9+', 0, 'user5-5-lego.jpg', 'טוב');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (7, 'פינוקיו', '4-', 0, 'user1-7-pinocchio.jpg', 'כמו חדש');
+INSERT INTO group14.toys (id, toy_name, toy_category, is_taken, toy_image_url, toy_condition) VALUES (16, 'מיניון', '4-', 0, 'user1-toy-id-8-product4.jpg', 'כמו חדש');
 
 create table cities
 (
@@ -75,17 +80,19 @@ create table location
     adress  varchar(30)                                   not null,
     city    varchar(30)                                   not null,
     region  enum ('מזרח', 'מערב', 'דרום', 'צפון', 'מרכז') not null,
-    constraint location_cities_city_name_fk_cities
+    constraint location_cities_city_name_fk
         foreign key (city) references cities (city_name),
     constraint location_users_user_id_fk
         foreign key (user_id) references users (user_id)
 );
 
+
 INSERT INTO group14.location (user_id, adress, city, region) VALUES (1, 'יפו 12', 'לוד', 'מזרח');
 INSERT INTO group14.location (user_id, adress, city, region) VALUES (2, 'בליקנד 14', 'נהריה', 'צפון');
-INSERT INTO group14.location (user_id, adress, city, region) VALUES (3, 'מצדה 11', 'תל אביב-יפו', 'מרכז');
-INSERT INTO group14.location (user_id, adress, city, region) VALUES (4, 'חי טייב 13', 'תל אביב-יפו', 'מרכז');
-INSERT INTO group14.location (user_id, adress, city, region) VALUES (5, 'שמעוני 4', 'באר שבע', 'דרום');
+INSERT INTO group14.location (user_id, adress, city, region) VALUES (3, 'מצדה 11', 'תל-אביב-יפו', 'מרכז');
+INSERT INTO group14.location (user_id, adress, city, region) VALUES (4, 'חי טייב 13', 'תל-אביב-יפו', 'מרכז');
+INSERT INTO group14.location (user_id, adress, city, region) VALUES (5, 'שמעוני 4', 'באר-שבע', 'דרום');
+INSERT INTO group14.location (user_id, adress, city, region) VALUES (9, 'בליקנד 14', 'ראשון-לציון', 'מרכז');
 
 create table user_toys
 (
@@ -99,9 +106,10 @@ create table user_toys
         foreign key (user_id) references users (user_id)
 );
 
-INSERT INTO group14.user_toys  (user_id, toy_id, date_added) VALUES (5, 5, '2022-02-16 17:09:54');
-INSERT INTO group14.user_toys  (user_id, toy_id, date_added) VALUES (4, 1, '2022-02-16 17:09:57');
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (5, 5, '2022-02-16 17:09:54');
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (4, 1, '2022-02-16 17:09:57');
 INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (2, 4, '2022-05-16 17:09:47');
-INSERT INTO group14.user_toys  (user_id, toy_id, date_added) VALUES (1, 2, '2022-07-16 17:09:42');
-INSERT INTO group14.user_toys  (user_id, toy_id, date_added) VALUES (1, 3, '2022-07-16 17:09:45');
-
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (1, 3, '2022-07-16 17:09:45');
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (1, 7, '2022-07-22 21:26:44');
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (3, 2, '2022-07-26 15:49:19');
+INSERT INTO group14.user_toys (user_id, toy_id, date_added) VALUES (1, 16, '2022-07-31 00:42:48');
